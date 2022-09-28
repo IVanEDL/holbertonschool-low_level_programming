@@ -3,8 +3,8 @@
 #include <stdio.h>
 
 /**
- * main - this code makes a random number and guesses if it is positive, negative or zero
- *
+ * main - this code makes a random number
+ * and guesses if it is positive, negative or zero
  *
  * Return: 0
  */
