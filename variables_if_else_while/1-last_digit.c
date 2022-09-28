@@ -17,10 +17,10 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	lastsos = n % 10;
 	if (lastsos > 5)
-		printf("%s %i is %i and is greater than 5", string, n, lastsos);
+		printf("%s %i is %i and is greater than 5 ", string, n, lastsos);
 	else if (lastsos == 0)
-		printf("%s %i is %i and is 0", string, n, lastsos);
+		printf("%s %i is %i and is 0 ", string, n, lastsos);
 	else if (lastsos < 6 && lastsos != 0)
-		printf("%s %i is %i and is less than 6 and not 0", string, n, lastsos);
+		printf("%s %i is %i and is less than 6 and not 0 ", string, n, lastsos);
 	return (0);
 }
