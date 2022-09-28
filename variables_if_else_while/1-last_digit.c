@@ -10,11 +10,12 @@
 int main(void)
 {
 	int n;
-	int lastsos = n % 10;
+	int lastsos;
 	char string[] = "Last digit of";
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
+	lastsos = n % 10;
 	if (lastsos > 5)
 		printf("%s %i is %i and is greater than 5", string, n, lastsos);
 	else if (lastsos == 0)
