@@ -10,7 +10,7 @@
 int main(void)
 {
 	int n;
-	int lastsos = (n % 10);
+	int lastsos = n % 10;
 	char string[] = "Last digit of";
 
 	srand(time(0));
