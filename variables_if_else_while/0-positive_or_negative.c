@@ -1,8 +1,10 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+
 /**
- * main - will assign a random number
+ * main - this code makes a random number and guesses if it is positive, negative or zero
+ *
  *
  * Return: 0
  */
@@ -12,19 +14,11 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	int num = n;
-
 	if (n > 0)
-	{
-		printf("%i is positive", num);
-	}
+		printf("%i is positive\n", n);
 	else if (n == 0)
-	{
-		printf("%i is zero", num);
-	}
+		printf("%i is zero\n", n);
 	else
-	{
-		printf("%i is negative", num);
-	}
+		printf("%i is negative\n", n);
 	return (0);
 }
