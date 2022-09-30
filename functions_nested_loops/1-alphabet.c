@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * print_alphabet - this code will display all letters of the alphabet, lowercase
+ * print_alphabet - this code will display all letters of the alphabet lwcase
  *
  * Return: 0
  *
@@ -15,5 +15,4 @@ void print_alphabet(void)
 	{
 		putchar(c);
 	}
-	return (0);
 }
