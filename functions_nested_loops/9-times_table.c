@@ -34,14 +34,14 @@ void times_table(void)
 				_putchar(' ');
 				_putchar(' ');
 			}
-			if (f * c < 10)
-				_putchar(f * c + '0');
-			else
-			{
-				_putchar((f * c) / 10 + '0');
-				_putchar((f * c) % 10 + '0');
-			}
-			_putchar('\n');
 		}
+		if (f * c < 10)
+			_putchar(f * c + '0');
+		else
+		{
+			_putchar((f * c) / 10 + '0');
+			_putchar((f * c) % 10 + '0');
+		}
+		_putchar('\n');
 	}
 }
