@@ -10,7 +10,7 @@ void times_table(void)
 	int f = 0;
 	int c = 0;
 
-	for (f = 0; c < 10; f++)
+	for (f = 0; f < 10; f++)
 	{
 		for (c = 0; c < 9; c++)
 		{
@@ -44,4 +44,5 @@ void times_table(void)
 		}
 		_putchar('\n');
 	}
+	return;
 }
