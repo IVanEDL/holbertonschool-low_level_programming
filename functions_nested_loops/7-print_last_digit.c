@@ -10,6 +10,11 @@ int print_last_digit(int c)
 {
 	int a = c % 10;
 
-	printf("%d", a);
+	if (a < 0)
+	{
+		a = -a;
+	}
+
+	_putchar(a + '0');
 	return (a);
 }
