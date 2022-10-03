@@ -7,21 +7,22 @@
 
 void jack_bauer(void)
 {
-	int min1 = 0;
-	int min2 = 0;
-	int hr1 = 0;
-	while (hr1 <= 24)
+	int h;
+	int m;
+
+	while (h < 24)
 	{
-		while (min1 <= 9)
+		while (m < 60)
 		{
-			while (min2 <= 9)
-			{
-				printf("%d:%d%d", hr1, min1, min2);
-				min2++;
-			}
-			min1++;
+			_putchar((h / 10) + '0');
+			_putchar((h % 10) + '0');
+			_putchar(':');
+			_putchar((m / 10) + '0');
+			_putchar((m % 10) + '0');
+			_putchar('\n');
+			m++;
 		}
-		hr1++;
+		h++;
 	}
 }
 
