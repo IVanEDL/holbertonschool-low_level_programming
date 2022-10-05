@@ -34,7 +34,7 @@ int main(void)
 			printf("%d", a);
 			a++;
 		}
-		if (a < 100)
+		if (a <= 100)
 		{
 			putchar(' ');
 		}
