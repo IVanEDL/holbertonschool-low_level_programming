@@ -17,26 +17,26 @@ int main(void)
 		if ((a % 3) == 0 && (a % 5) == 0)
 		{
 			printf("FizzBuzz");
-			putchar(' ');
 			a++;
 		}
 		else if ((a % 3) == 0 && (a % 5) != 0)
 		{
 			printf("Fizz");
-			putchar(' ');
 			a++;
 		}
 		else if ((a % 3) != 0 && (a % 5) == 0)
 		{
 			printf("Buzz");
-			putchar(' ');
 			a++;
 		}
 		else
 		{
 			printf("%d", a);
-			putchar(' ');
 			a++;
+		}
+		if (a < 100)
+		{
+			putchar(' ');
 		}
 	}
 	putchar('\n');
