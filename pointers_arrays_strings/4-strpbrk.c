@@ -25,5 +25,5 @@ char *_strpbrk(char *s, char *accept)
 	if (accept[f] == s[e])
 		return (&s[e]);
 	else
-		return ('\0');
+		return (00);
 }
