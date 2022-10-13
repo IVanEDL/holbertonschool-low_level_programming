@@ -16,14 +16,9 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (accept[f] == s[e])
 			{
-				for (; e != '\0'; e++)
-					return (&s[e]);
-				break;
+				return (&s[e]);
 			}
 		}
 	}
-	if (accept[f] == s[e])
-		return (&s[e]);
-	else
-		return (00);
+	return (00);
 }
