@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "main.h"
 /**
  * string_nconcat - concatenates two strings
  * @s1: first string
@@ -10,28 +10,70 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *strdes = 00;
-	int i = 0;
-	unsigned int a;
-	int p;
-	unsigned int r;
 
 	if (s1 == 00)
 		s1 = "";
 	if (s2 == 00)
 		s2 = "";
-	for (p = 0; s1[p] != '\0'; p++)
-		;
-	for (r = 0; s2[r] != '\0'; r++)
-		;
-	if (r >= n)
-		i = n;
-	strdes = malloc((i + p + 1) * sizeof(char));
+	strdes = malloc((_strlen(s1) + n + 1) * sizeof(char));
 	if (strdes == 00)
 		return (strdes);
-	for (a = 0; s1[a] != '\0'; a++)
-		strdes[a] = s1[a];
-	for (a = 0; a < n && s2[a] != '\0'; a++)
-		strdes[a + p] = s2[a];
-	strdes[a + p + 1] = '\0';
+	strdes = _strcpy(dest, s1);
+	strdes = _strncat(dest, s2, n);
 	return (strdes);
+}
+
+/**
+ * *_strncat - concatenates the value of a string to another string with limit
+ * @src: copied string
+ * @dest: destination string
+ * @n: limit of bytes
+ * Return: dest
+ */
+
+char *_strncat(char *dest, char *src, int n)
+{
+	int i = 0, count;
+
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	for (count = 0; count < n && src[count] != '\0'; count++)
+		dest[i + count] = src[count];
+	dest[i + count] = '\0';
+	return (dest);
+}
+
+/**
+ * *_strcpy - copies the value of a string to another string
+ * @src: copied string
+ * @dest: destination string
+ * Return: dest
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int i, count = 0;
+
+	while (*(src + count) != '\0')
+		count++;
+	for (i = 0; i <= count; i++)
+		*(i + dest) = *(i + src);
+	return (dest);
+}
+
+/**
+ * _strlen - returns the length of a string
+ * @s: entry value
+ * Return: said length
+ */
+
+int _strlen(char *s)
+{
+	int i, count = 0;
+
+	for (i = 0; s[i]; i++)
+		count++;
+	return (count);
 }
