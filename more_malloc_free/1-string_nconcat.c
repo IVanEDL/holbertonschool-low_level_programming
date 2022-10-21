@@ -11,6 +11,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *strdes = 00;
 	int i = 0;
+	unsigned int a;
 
 	if (s1 == 00)
 		s1 = "";
@@ -23,8 +24,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	strdes = malloc((_strlen(s1) + i + 1) * sizeof(char));
 	if (strdes == 00)
 		return (strdes);
-	strdes = _strcat(strdes, s1);
-	strdes = _strncat(strdes, s2, n);
+	for (a = 0; s1[a] != '\0'; a++)
+		strdes[a] = s1[a];
+	for (a = 0; a < n && s2[a] != '\0'; a++)
+		strdes[_strlen(s1) + a] = s2[a];
 	return (strdes);
 }
 
@@ -53,7 +56,7 @@ int _strlen(char *s)
  * Return: dest
  */
 
-char *_strcat(char *dest, char *src)
+/**char *_strcat(char *dest, char *src)
 {
 	int i = 0, count = 0;
 
@@ -69,6 +72,7 @@ char *_strcat(char *dest, char *src)
 	dest[i + count] = '\0';
 	return (dest);
 }
+*/
 
 /**
  * *_strncat - concatenates the value of a string to another string with limit
@@ -78,7 +82,8 @@ char *_strcat(char *dest, char *src)
  * Return: dest
  */
 
-char *_strncat(char *dest, char *src, int n)
+/**
+ * char *_strncat(char *dest, char *src, int n)
 {
 	int i = 0, count;
 
@@ -91,7 +96,7 @@ char *_strncat(char *dest, char *src, int n)
 	dest[i + count] = '\0';
 	return (dest);
 }
-
+*/
 
 /**
  * _strlenprime - returns the length of a string
