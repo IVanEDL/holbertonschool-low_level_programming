@@ -18,8 +18,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	strdes = malloc((_strlen(s1) + n + 1) * sizeof(char));
 	if (strdes == 00)
 		return (strdes);
-	strdes = _strcpy(dest, s1);
-	strdes = _strncat(dest, s2, n);
+	strdes = _strcpy(strdes, s1);
+	strdes = _strncat(strdes, s2, n);
 	return (strdes);
 }
 
