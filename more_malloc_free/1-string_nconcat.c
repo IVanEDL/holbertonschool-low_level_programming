@@ -1,5 +1,10 @@
 #include "main.h"
 /**
+ * string_nconcat - concatenates two strings
+ * @s1: first string
+ * @s2: second string. its length is limited by n
+ * @n: ammount of bytes that s2 is allowed to have
+ * Return: pointer to the new string
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
