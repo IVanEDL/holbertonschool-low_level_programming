@@ -10,12 +10,17 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *strdes = 00;
+	int i = 0;
 
 	if (s1 == 00)
 		s1 = "";
 	if (s2 == 00)
 		s2 = "";
-	strdes = malloc((_strlen(s1) + n + 1) * sizeof(char));
+	if (s2 >= n)
+		i = n;
+	else if (s2 < n)
+		i = _strlen(s2);
+	strdes = malloc((_strlen(s1) + i + 1) * sizeof(char));
 	if (strdes == 00)
 		return (strdes);
 	strdes = _strcat(strdes, s1);
