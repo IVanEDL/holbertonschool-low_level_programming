@@ -16,9 +16,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s1 = "";
 	if (s2 == 00)
 		s2 = "";
-	if (s2 >= n)
+	if (_strlenprime(s2) >= n)
 		i = n;
-	else if (s2 < n)
+	else if (_strlenprime(s2) < n)
 		i = _strlen(s2);
 	strdes = malloc((_strlen(s1) + i + 1) * sizeof(char));
 	if (strdes == 00)
@@ -36,7 +36,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 int _strlen(char *s)
 {
-	int i, count = 0;
+	int i;
+	int count = 0;
 
 	for (i = 0; s[i]; i++)
 	{
@@ -89,4 +90,23 @@ char *_strncat(char *dest, char *src, int n)
 		dest[i + count] = src[count];
 	dest[i + count] = '\0';
 	return (dest);
+}
+
+
+/**
+ * _strlenprime - returns the length of a string
+ * @s: entry value
+ * Return: said length
+ */
+
+unsigned int _strlenprime(char *s)
+{
+	int i;
+       	unsigned int count = 0;
+
+	for (i = 0; s[i]; i++)
+	{
+		count++;
+	}
+	return (count);
 }
