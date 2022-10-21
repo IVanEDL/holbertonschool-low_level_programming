@@ -32,5 +32,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		strdes[a] = s1[a];
 	for (a = 0; a < n && s2[a] != '\0'; a++)
 		strdes[a + p] = s2[a];
+	strdes[a + p + 1] = '\0';
 	return (strdes);
 }
