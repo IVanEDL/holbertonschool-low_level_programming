@@ -4,7 +4,7 @@
 #include "_strdup.c"
 /**
  * new_dog - creates a new dog
- * @name: dog name 
+ * @name: dog name
  * @age: dog age
  * @owner: dog owner
  * Return: pointer to the new dog, 00 if it fails
