@@ -1,6 +1,4 @@
 #include "3-calc.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
  * main - performs operations
@@ -9,7 +7,7 @@
  * Return: If everything goes well, 0
  */
 
-int main(int argc, int *argv)
+int main(int argc, char **argv)
 {
 	char op;
 	int num1, num2;
@@ -21,9 +19,9 @@ int main(int argc, int *argv)
 		return (98);
 	}
 
-	op = argv[2];
-	num1 = argv[1];
-	num2 = argv[3];
+	op = *argv[2];
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
 
 	if (op != '+' && op != '-' && op != '*' && op != '/' && op != '%')
 	{
@@ -37,7 +35,7 @@ int main(int argc, int *argv)
 		return (100);
 	}
 
-	calc = get_op_func(op);
+	calc = get_op_func(argv[2]);
 	printf("%d\n", calc(num1, num2));
 	return (0);
 }
