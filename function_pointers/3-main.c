@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 
-	if (op != '+' && op != '-' && op != '*' && op != '/' && op != '%')
+	if (strlen(argv[2]) != 0 || (op != '+' && op != '-' && op != '*' && op != '/' && op != '%'))
 	{
 		printf("Error\n");
 		return (99);
