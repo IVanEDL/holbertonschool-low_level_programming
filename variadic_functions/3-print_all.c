@@ -7,6 +7,7 @@
 /**
  * separator - checks if a separator is needed, prints if yes
  * @i: entry variable
+ * @p: max length of the string
  * Return: ñeh
  */
 void separator(int i, int p)
@@ -24,7 +25,7 @@ void print_all(const char * const format, ...)
 {
 	int i = 0, p = 0;
 	va_list args;
-	char * a;
+	char *a;
 
 	if (format != 00)
 	{
