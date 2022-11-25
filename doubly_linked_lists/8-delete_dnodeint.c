@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * delete_nodeint_at_index - deletes a certain node of a listint_t list.
+ * delete_dnodeint_at_index - deletes a certain node of a listint_t list.
  * @head: head of the list.
  * @index: position of the deleted node
  * Return: 1 if succesful, -1 if not.
@@ -46,5 +46,5 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	}
 	ant = tmp->prev, sig = tmp->next, sig->prev = ant;
 	ant->next = sig, tmp->next = NULL, tmp->prev = NULL, free(tmp);
-	return (1);		
+	return (1);
 }
