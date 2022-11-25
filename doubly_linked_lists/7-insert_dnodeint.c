@@ -8,10 +8,10 @@
  * Return: the new node.
  */
 
-dlistint_t *insert_dnodeint_at_index(listint_t **h, unsigned int idx, int n)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	unsigned int i = 0;
-	dlistint_t *p = malloc(sizeof(listint_t));
+	dlistint_t *p = malloc(sizeof(dlistint_t));
 	dlistint_t *a = *h;
 	dlistint_t *r = *h;
 
@@ -29,14 +29,18 @@ dlistint_t *insert_dnodeint_at_index(listint_t **h, unsigned int idx, int n)
 		p->prev = NULL;
 		return (p);
 	}
-	for (i = 1; a != 00 && i < idx; a = a->next, r = r->next, i++)
+	if (a != NULL)
+		a = a->next;
+	else
+		return (NULL);
+	for (i = 1; a && i < idx; i++, a = a->next, r = r->next)
 	{
 	}
 	if (idx == i)
 	{
 		r->next = p;
 		p->next = a;
-		if (a != NULL)
+		if (a)
 			a->prev = p;
 		p->prev = r;
 		return (p);

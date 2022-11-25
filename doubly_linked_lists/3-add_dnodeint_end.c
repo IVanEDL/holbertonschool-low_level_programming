@@ -7,9 +7,9 @@
  * Return: address of the new node, null if failed
  */
 
-listint_t *add_nodeint_end(listint_t **head, const int n)
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	listint_t *node = malloc(sizeof(listint_t));
+	dlistint_t *node = malloc(sizeof(dlistint_t)), *temp = *head;
 
 	if (node == NULL)
 		return (NULL);

@@ -7,10 +7,10 @@
  * Return: 1 if succesful, -1 if not.
  */
 
-int delete_nodeint_at_index(listint_t **head, unsigned int index)
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	unsigned int i = 0;
-	listint_t *tmp = *head, *ant, *sig;
+	dlistint_t *tmp = *head, *ant, *sig;
 
 	if (!*head)
 		return (-1);
@@ -34,7 +34,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	}
 	if (!tmp->prev && tmp->next)
 	{
-		sig = delete->next, sig->prev = NULL, tmp->next = NULL;
+		sig = tmp->next, sig->prev = NULL, tmp->next = NULL;
 		free(tmp);
 		return (1);
 	}
