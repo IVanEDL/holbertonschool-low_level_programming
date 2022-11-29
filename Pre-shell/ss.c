@@ -21,18 +21,21 @@ int main(int ac, char **av)
 		sleep(1);
 		return (1);
 	}
-	while (1)
+	else
 	{
-		printf("$ ");
-		getline(&buffer, bufsize, NULL);
-		if (strcmp(buffer, "exit\n") == 0)
-			break;
-		tokens = strtok(buffer, sep);
-		while (tokens != NULL)
-			tokens = strtok(NULL, sep);
-		child_pid = fork();
-		wait(&status);
+		while (1)
+		{
+			printf("$ ");
+			getline(&buffer, bufsize, NULL);
+			if (strcmp(buffer, "exit\n") == 0)
+				break;
+			tokens = strtok(buffer, sep);
+			while (tokens != NULL)
+				tokens = strtok(NULL, sep);
+			child_pid = fork();
+			wait(&status);
+		}
+		printf("Connection terminated.");
+		return (1);
 	}
-	printf("Connection terminated.");
-	return (1);
 }
