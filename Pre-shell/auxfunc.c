@@ -2,19 +2,18 @@
 
 char **tokenize(char *line)
 {
-	char *token, **tokens;
+	char **tokens;
 	int len = 8, i = 0;
 
-	token = malloc(sizeof(char) * len);
+	tokens = malloc(sizeof(char) * len);
 	if (token == 00)
 		return (00);
 	
-	token = strtok(line, " ");
+	tokens[i] = strtok(line, " ");
 	while (token)
 	{
-		tokens[i] = token;
 		i++;
-		token = strtok(NULL, " ");
+		tokens[i] = strtok(NULL, " ");
 		tokens = realloc(tokens, sizeof(char *) * (i + 1));
 		if (!tokens)
 		{

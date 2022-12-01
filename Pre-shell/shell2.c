@@ -2,29 +2,24 @@
 
 int main(void)
 {
-	char **tokens = malloc(8 * sizeof(char *));
+	char **tokens;
 	char *buffer;
 	size_t *bufsize = 0;
-	int status;
-	pid_t child_pid;
+	int a;
 
 	while (1)
 	{
 		printf("$ ");
 		getline(&buffer, bufsize, NULL);
+		tokens = malloc(8 * sizeof(char *));
+		if (tokens == 00)
+		{
+			printf("a");
+			return (00);
+		}
 		tokens = tokenize(strdup(buffer));
-		child_pid = fork();
-		if (child_pid == 0)
-		{
-			if (execve(tokens[0], tokens, NULL) == -1)
-			{
-				perror("Error");
-			}
-		}
-		else
-		{
-			wait(&status);
-		}
+		for (a = 0; tokens[a] != 00; a++)
+			printf("%s", tokens[a]);
 	}
 	return (0);
 }
