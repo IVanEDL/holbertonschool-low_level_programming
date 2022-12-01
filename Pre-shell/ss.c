@@ -11,12 +11,13 @@ int main(int ac, char **av)
 	char *buffer;
 	size_t *bufsize = 0;
 	char *sep = " ";
-	int status;
+	int status, i = 0, p = 0;
 	pid_t child_pid;
+	char *input[32][10];
 
 	if (child_pid == 0)
 	{
-		if (execve(tokens[0], tokens, NULL) == -1)
+		if (execve(input[i][p], input[i], NULL) == -1)
 			perror("Error:");
 		sleep(1);
 		return (1);
@@ -31,9 +32,14 @@ int main(int ac, char **av)
 				break;
 			tokens = strtok(buffer, sep);
 			while (tokens != NULL)
+			{
+				input[i][p] = tokens;
 				tokens = strtok(NULL, sep);
+				p++;
+			}
 			child_pid = fork();
 			wait(&status);
+			i++;
 		}
 		printf("Connection terminated.");
 		return (1);
