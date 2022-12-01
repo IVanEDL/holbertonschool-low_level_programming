@@ -10,14 +10,14 @@ int main(__attribute__((__unused__))int ac, char __attribute__((__unused__))**av
 	char  *tokens;
 	char *buffer;
 	size_t *bufsize = 0;
-	char *sep = " ";
-	int status, i = 0, p = 0;
-	pid_t child_pid = 1;
-	char *input[8][10];
+	int status, p = 0;
+	pid_t child_pid;
+	char **input;
 
+	child_pid = fork();
 	if (child_pid == 0)
 	{
-		if (execve(input[i][p], input[i], NULL) == -1)
+		if (execve(input[0], input, NULL) == -1)
 			perror("Error:");
 		sleep(1);
 		return (1);
@@ -30,16 +30,14 @@ int main(__attribute__((__unused__))int ac, char __attribute__((__unused__))**av
 			getline(&buffer, bufsize, NULL);
 			if (strcmp(buffer, "exit\n") == 0)
 				break;
-			tokens = strtok(buffer, sep);
+			tokens = strtok(buffer, " ");
 			while (tokens != NULL)
 			{
-				input[i][p] = tokens;
-				tokens = strtok(NULL, sep);
+				input[p] = tokens;
+				tokens = strtok(NULL, " ");
 				p++;
 			}
-			child_pid = fork();
 			wait(&status);
-			i++;
 		}
 		printf("Connection terminated.");
 		return (1);
