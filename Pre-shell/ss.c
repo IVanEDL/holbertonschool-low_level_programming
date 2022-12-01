@@ -5,15 +5,15 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-int main(int ac, char **av)
+int main(__attribute__((__unused__))int ac, char __attribute__((__unused__))**av)
 {
 	char  *tokens;
 	char *buffer;
 	size_t *bufsize = 0;
 	char *sep = " ";
 	int status, i = 0, p = 0;
-	pid_t child_pid;
-	char *input[32][10];
+	pid_t child_pid = 1;
+	char *input[8][10];
 
 	if (child_pid == 0)
 	{
